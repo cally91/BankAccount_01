@@ -74,7 +74,16 @@ public class Bankexec {
 		}
 		accounList();
 		System.out.println("입금할 계좌번호를 선택하세요>");
-		BankVO bVO;
+		BankVO bvo;
+		while(true) {
+			String ano =scanner.next();
+			bvo =findAccount(ano);
+			if (bvo==null)
+				System.out.println("계좌번호을 확인하세요>");
+		else
+			break;
+		}
+		System.out.println();
 	}
 
 	private static void accounList() {
